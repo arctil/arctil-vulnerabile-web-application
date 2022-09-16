@@ -16,9 +16,6 @@
 						<div id="form-section">
 							<button name="login" class="button login-button">Login</button>
 						</div>
-						<!-- test user credentials -->
-						<!-- username: sample -->
-						<!-- password: xsFR21SsAD3adDE -->
 					<?php
 						}else{
 
