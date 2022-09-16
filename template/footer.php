@@ -59,6 +59,7 @@
 		</div>
 		<footer id="page-footer">
 
+			<!-- <a href="backup/">Back up folder</a> -->
 		</footer>
 	</body>
 </html>
