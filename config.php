@@ -10,7 +10,7 @@
 
 	}catch(Exception $exception){
 
-		include("erros/sql-error.php");
+		include("errors/sql-error.php");
 		exit();
 
 	}
