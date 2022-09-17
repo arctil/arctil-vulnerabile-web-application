@@ -17,4 +17,17 @@ Should you need any help finding and exploiting these vulnerabilities then here 
 * https://arctil.com/help - arctil Help
 * https://owasp.org - OWASP
 * https://portswigger.net - Portswigger
+
+# How to install?
+
+Copy all files into your test server directory (on xampp 'htdocs/'). Once you've done this you'll just need to open the 'config.php' file with a text editor and change the following line
+
+`$dbConnection = mysqli_connect('localhost','root','','avwa') or die("Error connecting to MySQL database");`
+
+Here's what you need to do, replace the following 'localhost','root','','avwa' with you database info. Here's what you'll need to add.
+
+'hostname','username','password','databasename'
+
+Enjoy and happy hacking!
+
 			
