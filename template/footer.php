@@ -16,6 +16,7 @@
 						<div id="form-section">
 							<button name="login" class="button login-button">Login</button>
 						</div>
+					</form>
 					<?php
 						}else{
 
@@ -44,13 +45,13 @@
 							}
 
 						?>
-					</form>
 				</section>
 				<ul>
 					<li>&copy; Copyright arctil 2021 - 2022.</li>
 					<li><a href="https://arctil.com">arctil Website</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="vulnerabilities.php">Vulnerabilities</a></li>
+					<li><a href="dev-logs.php?log=changes.txt">Dev Logs</a></li>
 					<li><a href="https://twitter.com/realarctil">Twitter</a></li>
 					<li><a href="https://facebook.com/Arctil">Facebook</a></li>
 					<li><a href="https://github.com/arctil">Github</a></li>
@@ -58,7 +59,6 @@
 			</aside>
 		</div>
 		<footer id="page-footer">
-
 			<!-- <a href="backup/">Back up folder</a> -->
 		</footer>
 	</body>
