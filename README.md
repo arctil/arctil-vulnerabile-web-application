@@ -1,5 +1,5 @@
 # arctil Vulnerabile Web Application
-arctil vulnerable web application is a sample website built with the purpose of being insecure. This application is built using PHP and makes use of SQL, here's a full list of all known vulnerabilities.
+arctil vulnerable web application is a sample website built with the purpose of being insecure. This application is built using PHP and has been integral in testing arctil 3, here's a full list of all known vulnerabilities included with this sample website.
 
 * Full Path Disclosure
 * Reflected Cross Site Scripting
