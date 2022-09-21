@@ -23,14 +23,14 @@
 	include("template/header.php");
 
 
-	echo '<h2>'.$profileInformation['name'].'</h2>';
+	echo '<h2>'.$userInfo->name.'</h2>';
 ?>	
 	<section id="page-section">
 		<div id="news-preview-top"></div>
 		<div id="news-preview">
 			<form action="" method="POST">
 				<div id="form-input-section">
-					<label>Name: </label><br /><input type="text" name="name" value="<?php echo $profileInformation['name']; ?>" />
+					<label>Name: </label><br /><input type="text" name="name" value="<?php echo $userInfo->name; ?>" />
 				</div>
 				<div id="form-input-section">
 					<label>Profile Piece</label><br />
@@ -50,7 +50,7 @@
 
 				}
 
-				if($profileInformation['role'] == "Account Master"){
+				if($userInfo->role == "Account Master"){
 
 			?>
 
