@@ -5,8 +5,7 @@
 	include("functions.php");
 
 	if(!loggedIn()){
-		header("Location: index.php?warning=You do not have permission to access the \"my-account.php\" page.");
-		exit();
+		header("Location: index.php?warning=You do not have permission to access the \"post.php\" page.");
 	}
 
 	$userInfo = json_decode(base64_decode($_COOKIE['login-session']));
