@@ -29,6 +29,8 @@
 
 					<p>Upvotes: <?php echo $upvotes_for_user['upvotes']; ?></p>
 
+					<p><br /><a href="post.php" class="button">Post News</a></p>
+
 						<?php
 							}
 
