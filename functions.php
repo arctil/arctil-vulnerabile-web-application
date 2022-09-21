@@ -53,25 +53,15 @@
 	function get_article_information($article_id){
 		global $dbConnection;
 
-		try{
+		$infoQuery = mysqli_query($dbConnection, "SELECT * FROM `news` WHERE `news_id`='".$article_id."' LIMIT 1");
 
-			$article_id = mysqli_real_escape_string($dbConnection, $article_id);
+		if(mysqli_num_rows($infoQuery) == 0){
 
-			$infoQuery = mysqli_query($dbConnection, "SELECT * FROM `news` WHERE `news_id`='".$article_id."' LIMIT 1");
-
-			if(mysqli_num_rows($infoQuery) == 0){
-
-				return "Error 404";
-
-			}
-
-			return mysqli_fetch_assoc($infoQuery);
-
-		}catch(Exception $sqlError){
-
-			return "SQL Error";
+			return "Error 404";
 
 		}
+
+		return mysqli_fetch_assoc($infoQuery);
 	}
 
 	function submit_news($id, $name, $body){
@@ -148,6 +138,8 @@
 
 	function upvotes_count($article_id){
 		global $dbConnection;
+
+		$article_id = mysqli_real_escape_string($dbConnection, $article_id);
 
 		$upvotes_count = mysqli_query($dbConnection, "SELECT COUNT(`news_id`) AS `upvotes` FROM `news_likes` WHERE `news_id` = '".$article_id."'");
 
