@@ -9,6 +9,7 @@ arctil vulnerable web application is a sample website built with the purpose of 
 *	Privilage Escalation
 *	SQL Injection
 *	Broken Access Control
+* 	IDOR
 *	Command Execution
 *	Open Directory Listing
 *	Local File Inclusion
