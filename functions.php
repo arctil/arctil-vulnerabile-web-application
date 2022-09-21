@@ -19,6 +19,8 @@
 		}catch(Exception $sqlError){
 
 			//SQL error page...
+			header("Location: errors/sql-error.php");
+			exit();
 
 		}
 	}
@@ -72,44 +74,35 @@
 		}
 	}
 
-	function update_information($account_id, $name, $profile){
+	function update_information($account_id, $name, $profile, $role){
 		global $dbConnection;
 
 		$account_id = mysqli_real_escape_string($dbConnection, $account_id);
 		$name = mysqli_real_escape_string($dbConnection, $name);
 		$profile = mysqli_real_escape_string($dbConnection, $profile);
+		$role = mysqli_real_escape_string($dbConnection, $role);
 
-		$updateQuery = mysqli_query($dbConnection, "UPDATE `users` SET `name` = '".$name."', `profile` = '".$profile."' WHERE `user_id` = '".$account_id."'");
+		$updateQuery = mysqli_query($dbConnection, "UPDATE `users` SET `name` = '".$name."', `role` = '".$role."', `profile` = '".$profile."' WHERE `user_id` = '".$account_id."'");
 	}
 
 	function get_profile_information($profile_id){
 		global $dbConnection;
 
-		try{
+		$infoQuery = mysqli_query($dbConnection, "SELECT * FROM `users` WHERE `user_id`='".$profile_id."' LIMIT 1") or die(mysqli_error());
 
-			$profile_id = mysqli_real_escape_string($dbConnection, $profile_id);
+		if(mysqli_num_rows($infoQuery) == 0){
 
-			$infoQuery = mysqli_query($dbConnection, "SELECT * FROM `users` WHERE `user_id`='".$profile_id."' LIMIT 1");
-
-			if(mysqli_num_rows($infoQuery) == 0){
-
-				return "Error 404";
-
-			}
-
-			return mysqli_fetch_assoc($infoQuery);
-
-		}catch(Exception $sqlError){
-
-			return "SQL Error";
+			return "Error 404";
 
 		}
+
+		return mysqli_fetch_assoc($infoQuery);
 	}
 
 	function author_info($author_name){
 		global $dbConnection;
 
-		$getAuthorInfo = mysqli_query($dbConnection, "SELECT * FROM `users` WHERE `name`='".$author_name."' LIMIT 1");
+		$getAuthorInfo = mysqli_query($dbConnection, "SELECT `name` FROM `users` WHERE `user_id`='".$author_name."' LIMIT 1");
 
 		return mysqli_fetch_assoc($getAuthorInfo);
 	}
@@ -175,9 +168,9 @@
 			return "Login Successful";
 
 		}else{
-			
-			return "Login Failed";
-			
+
+			return "Login Unsuccessful";
+
 		}
 	}
 
