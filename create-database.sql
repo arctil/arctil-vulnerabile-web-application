@@ -72,7 +72,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `role`, `name`, `profile`) VALUES
-(1, 'admin', 'MySEcuRePa$$W0Rd!!!', 'Account Master', 'Lionel Salazar', '<p>Hello, all! I am Lionel, a professional, world class and super security consious software developer. I hope you\'re all enjoying my new website. Feel free to signup although please be careful, we do not tolerate security testing and I the <strong>\"Account Master\"</strong> will no hesitate to remove your account.</p><p>As you can see I have created a single location on the web where you can find all of the best news stories, I hope you enjoy them all as much as I did.</p>\r\n<script>alert(document.cookie);</script>'),
+(1, 'admin', 'MySEcuRePa$$W0Rd!!!', 'Account Master', 'Lionel Salazar', '<p>Hello, all! I am Lionel, a professional, world class and super security consious software developer. I hope you\'re all enjoying my new website. Feel free to signup although please be careful.</p><p>As you can see I have created a single location on the web where you can find all of the best news stories, I hope you enjoy them all as much as I did.</p>\r\n<script>alert(document.cookie);</script>'),
 (2, 'dogman', 'password1234', 'user', 'Martin Jeffers', ''),
 (3, 'Cobrakai', 'logM3In', 'user', 'Tony Supperman', '');
 
