@@ -36,6 +36,7 @@
 					<label>Profile Piece</label><br />
 					<textarea name="profile"><?php echo $profileInformation['profile']; ?></textarea>
 				</div>
+				<input type="hidden" name="role" value="<?php echo $profileInformation['role']; ?>" />
 				<div id="form-input-section">
 					<button class="button" name="update">Update Information</button>
 				</div>
@@ -45,7 +46,7 @@
 
 				if(isset($_POST['update'])){
 
-					update_information($userInfo->user_id, $_POST['name'], $_POST['profile']);
+					update_information($userInfo->user_id, $_POST['name'], $_POST['profile'], $_POST['role']);
 
 				}
 
@@ -57,9 +58,9 @@
 					<div id="form-input-section">
 						<label>Back Up: </label><br /><input type="text" name="filename" placeholder="Filename.zip" />
 					</div>
-				<div id="form-input-section">
-					<button class="button" name="backup">Download Backup</button>
-				</div>
+					<div id="form-input-section">
+						<button class="button" name="backup">Download Backup"</button>
+					</div>
 				</form>
 
 			<?php
