@@ -74,6 +74,16 @@
 		}
 	}
 
+	function submit_news($id, $name, $body){
+		global $dbConnection;
+
+		$id = mysqli_real_escape_string($dbConnection, $id);
+		$name = mysqli_real_escape_string($dbConnection, $name);
+		$body = mysqli_real_escape_string($dbConnection, $body);
+
+		$submitQuery = mysqli_query($dbConnection, "INSERT INTO `news` (`news_title`,`news_body`,`author`) VALUES ('".$name."','".$body."','".$id."')");
+	}
+
 	function update_information($account_id, $name, $profile, $role){
 		global $dbConnection;
 
